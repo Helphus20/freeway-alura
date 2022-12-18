@@ -34,8 +34,13 @@ function mostraVaca(){
   }
 
   function pontos(){
+    text(pontuacao, 50, 25);
+    textSize(25);
+    fill(255);
     if(yVaca < 0){
         pontuacao += 1;
         yVaca = 368;
     }
   }
+
+
