@@ -1,21 +1,21 @@
 //imagens atores
-let estrada;
-let vaca;
-let carro1;
-let carro2;
-let carro3;
-let carro4;
-let carro5;
+let road;
+let cow;
+let car1;
+let car2;
+let car3;
+let car4;
+let car5;
 
-let pontuacao = 0;
+let score = 0;
 
 function preload(){
-  estrada = loadImage("imagens/estrada.png");
-  vaca = loadImage("imagens/ator-1.png");
-  carro1 = loadImage("imagens/carro-1.png");
-  carro2 = loadImage("imagens/carro-2.png");
-  carro3 = loadImage("imagens/carro-3.png");
-  carro4 = loadImage("imagens/carro-2.png");
-  carro5 = loadImage("imagens/carro-1.png");
+  road = loadImage("imagens/estrada.png");
+  cow = loadImage("imagens/ator-1.png");
+  car1 = loadImage("imagens/carro-1.png");
+  car2 = loadImage("imagens/carro-2.png");
+  car3 = loadImage("imagens/carro-3.png");
+  car4 = loadImage("imagens/carro-2.png");
+  car5 = loadImage("imagens/carro-1.png");
 }
 

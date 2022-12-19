@@ -3,12 +3,12 @@ function setup() {
   }
   
   function draw() {
-    background(estrada);
-    mostraVaca();
-    mostraCarros();
-    movimentaCarros();
-    movimentaAtor();
-    pontos();
+    background(road);
+    showCow();
+    showCars();
+    moveCars();
+    moveCow();
+    punctuation();
   }
   
   
