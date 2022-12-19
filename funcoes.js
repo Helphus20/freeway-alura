@@ -1,45 +1,46 @@
 //algumas das variaveis dos carros
-let velocidadeCarro1 = 7;
-let velocidadeCarro2 = 5;
-let velocidadeCarro3 = 6;
-let velocidadeCarro4 = 4;
-let velocidadeCarro5 = 8;
+let velocidadeCarro = [7,5,6,4,8];
 let comprimentoCarros = 50;
 let alturaCarros = 40;
+
+//posiçoes atores
+let xCarro = [600,400,150,0,227];
+let yVaca = 368;
+
 
 function mostraVaca(){
     image(vaca, 100, yVaca, 30, 30);
   }
   
   function mostraCarros(){
-    image(carro1, xCarro1, 40, comprimentoCarros, alturaCarros);
-    image(carro2, xCarro2, 210, comprimentoCarros, alturaCarros);
-    image(carro3, xCarro3, 320, comprimentoCarros, alturaCarros);
-    image(carro4, xCarro4, 95, comprimentoCarros, alturaCarros);
-    image(carro5, xCarro5, 150, comprimentoCarros, alturaCarros);
+    image(carro1, xCarro[0], 40, comprimentoCarros, alturaCarros);
+    image(carro2, xCarro[1], 210, comprimentoCarros, alturaCarros);
+    image(carro3, xCarro[2], 320, comprimentoCarros, alturaCarros);
+    image(carro4, xCarro[3], 95, comprimentoCarros, alturaCarros);
+    image(carro5, xCarro[4], 150, comprimentoCarros, alturaCarros);
   }
   
   function movimentaCarros(){
-    xCarro1 -= velocidadeCarro1;
-    xCarro2 -= velocidadeCarro2;
-    xCarro3 -= velocidadeCarro3;
-    xCarro4 -= velocidadeCarro4;
-    xCarro5 -= velocidadeCarro5;
+    xCarro[0] -= velocidadeCarro[0];
+    xCarro[1] -= velocidadeCarro[1];
+    xCarro[2] -= velocidadeCarro[2];
+    xCarro[3] -= velocidadeCarro[3];
+    xCarro[4] -= velocidadeCarro[4];
 
-    if(xCarro1 < -40){
-        xCarro1 = width;
+    if(xCarro[0] < -40){
+        xCarro[0] = width;
     }
-    if(xCarro2 < -40){
-        xCarro2 = width;
+    if(xCarro[1] < -40){
+        xCarro[1] = width;
     }
-    if(xCarro3 < -40){
-        xCarro3 = width;
+    if(xCarro[2] < -40){
+        xCarro[2] = width;
     }
-    if(xCarro4 < -40){
-      xCarro4 = width;
+    if(xCarro[3] < -40){
+      xCarro[3] = width;
     }
-    if(xCarro5 < -40){
-    xCarro5 = width;
+    if(xCarro[4] < -40){
+    xCarro[4] = width;
     }
   }
   

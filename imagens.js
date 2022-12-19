@@ -7,14 +7,6 @@ let carro3;
 let carro4;
 let carro5;
 
-//posiçoes atores
-let xCarro1 = 600;
-let xCarro2 = 400;
-let xCarro3 = 150;
-let xCarro4 = 0;
-let xCarro5 = 227;
-let yVaca = 368;
-
 let pontuacao = 0;
 
 function preload(){
