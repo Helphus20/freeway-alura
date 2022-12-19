@@ -9,6 +9,7 @@ function setup() {
     moveCars();
     moveCow();
     punctuation();
+    carCollision();
   }
   
   
