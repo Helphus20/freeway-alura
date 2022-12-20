@@ -17,7 +17,11 @@ function showCow(){
   
   function showCars(){
     for(let i = 0; i < cars.length ; i++){
-      image(cars[i], xCar[i], yCar[i], lengthCars, heightCars);
+      image(car1, xCar[0], yCar[0], lengthCars, heightCars);
+      image(car2, xCar[1], yCar[1], lengthCars, heightCars);
+      image(car3, xCar[2], yCar[2], lengthCars, heightCars);
+      image(car4, xCar[3], yCar[3], lengthCars, heightCars);
+      image(car5, xCar[4], yCar[4], lengthCars, heightCars);
     }
   }
   
