@@ -11,6 +11,7 @@ let xCow = 100;
 let widthCow = 30;
 let heightCow = widthCow;
 let initialPositionCow = 368;
+let cowOnScreen = true;
 
 
 function showCow(){
@@ -45,12 +46,16 @@ function showCow(){
       yCow -= 3;
     }
     if (keyIsDown(DOWN_ARROW)){
+      if(yCow > 360){
+        cowOnScreen = false;
+        keepsCowOnTheScreen()
+      }
       yCow += 3;
     }
   }
 
   function punctuation(){
-    text(score, 50, 25);
+    text(score, 50, 26);
     textSize(25);
     fill(255);
     if(yCow < 0){
@@ -59,7 +64,7 @@ function showCow(){
     }
   }
 
-  function carCollision() {
+  function carCollision() {//when the car collide with cow, it returns at initial position
     for (let i = 0; i < cars.length; i += 1) {
   
       if (yCow < yCar[i] + heightCars && 
@@ -71,5 +76,11 @@ function showCow(){
       score = 0;
   
       }
+    }
+  }
+
+  function keepsCowOnTheScreen(){
+    if(cowOnScreen == false){
+      yCow = 368;
     }
   }
