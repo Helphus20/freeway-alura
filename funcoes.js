@@ -1,5 +1,5 @@
 //anythings cars's variables
-let speedCar = [7,5,6,4,8,10];
+let speedCar = [7,5,6,4,8,5];
 let lengthCars = 50;
 let heightCars = 40;
 
@@ -62,6 +62,9 @@ function showCow(){
         score += 1;
         yCow = initialPositionCow;
     }
+    if(score < 0){//so there is no negative score
+      score = 0;
+    }
   }
 
   function carCollision() {//when the car collide with cow, it returns at initial position
@@ -73,7 +76,7 @@ function showCow(){
         yCow + heightCow > yCar[i]) {
   
       yCow = initialPositionCow;
-      score = 0;
+      score -= 1;
   
       }
     }

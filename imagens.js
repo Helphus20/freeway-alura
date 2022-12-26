@@ -7,7 +7,7 @@ let car3;
 let car4;
 let car5;
 let car6;
-let cars = [car1,car2,car3,car4,car5,car6]
+let cars = [car1,car2,car3,car4,car5,car6];
 let score = 0;
 
 function preload(){
