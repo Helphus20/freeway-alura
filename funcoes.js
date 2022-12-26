@@ -1,18 +1,20 @@
 //anythings cars's variables
-let speedCar = [7,5,6,4,8];
+let speedCar = [7,5,6,4,8,10];
 let lengthCars = 50;
 let heightCars = 40;
 
 //posiction actors
-let xCar = [600,400,150,0,227];
-let yCar = [40,210,320,95,150];
+let xCar = [600,400,150,0,227,500];
+let yCar = [40,210,320,95,150,260];
 let yCow = 368;
 let xCow = 100;
+let widthCow = 30;
+let heightCow = widthCow;
 let initialPositionCow = 368;
 
 
 function showCow(){
-    image(cow, xCow, yCow, 30, 30);
+    image(cow, xCow, yCow, heightCow, widthCow);
   }
   
   function showCars(){
@@ -22,6 +24,7 @@ function showCow(){
       image(car3, xCar[2], yCar[2], lengthCars, heightCars);
       image(car4, xCar[3], yCar[3], lengthCars, heightCars);
       image(car5, xCar[4], yCar[4], lengthCars, heightCars);
+      image(car6, xCar[5], yCar[5], lengthCars, heightCars);
     }
   }
   
@@ -56,8 +59,17 @@ function showCow(){
     }
   }
 
-  function carCollision(){
-    if(xCow == xCar[0] && yCow == yCar[0]){
+  function carCollision() {
+    for (let i = 0; i < cars.length; i += 1) {
+  
+      if (yCow < yCar[i] + heightCars && 
+        xCow + widthCow > xCar[i] &&
+        xCow < xCar[i] + heightCars &&
+        yCow + heightCow > yCar[i]) {
+  
       yCow = initialPositionCow;
+      score = 0;
+  
+      }
     }
   }
