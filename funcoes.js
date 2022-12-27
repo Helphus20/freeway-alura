@@ -61,6 +61,7 @@ function showCow(){
     if(yCow < 0){
         score += 1;
         yCow = initialPositionCow;
+        dotSound.play();
     }
     if(score < 0){//so there is no negative score
       score = 0;
@@ -77,7 +78,7 @@ function showCow(){
   
       yCow = initialPositionCow;
       score -= 1;
-  
+      collisionSound.play();
       }
     }
   }

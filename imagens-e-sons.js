@@ -1,4 +1,4 @@
-//imagens atores
+//actors's images
 let road;
 let cow;
 let car1;
@@ -10,6 +10,11 @@ let car6;
 let cars = [car1,car2,car3,car4,car5,car6];
 let score = 0;
 
+//sounds's variables
+let dotSound;
+let collisionSound;
+let soundtrack;
+
 function preload(){
   road = loadImage("imagens/estrada.png");
   cow = loadImage("imagens/ator-1.png");
@@ -19,5 +24,8 @@ function preload(){
   car4 = loadImage("imagens/carro-2.png");
   car5 = loadImage("imagens/carro-1.png");
   car6 = loadImage("imagens/carro-3.png");
+  dotSound = loadSound("sons/pontos.wav");
+  collisionSound = loadSound("sons/colidiu.mp3");
+  soundtrack = loadSound("sons/trilha.mp3");
 }
 
