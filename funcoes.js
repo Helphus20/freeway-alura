@@ -2,17 +2,18 @@
 let speedCar = [7,5,6,4,8,5];
 let lengthCars = 50;
 let heightCars = 40;
+let level3 = false;
 
 //posiction actors
 let xCar = [600,400,150,0,227,500];
-let yCar = [40,210,320,95,150,260];
+let yCar = [40,95,150,210,260,320];
 let yCow = 368;
 let xCow = 100;
 let widthCow = 30;
 let heightCow = widthCow;
 let initialPositionCow = 368;
 let cowOnScreen = true;
-
+let speedCow = 3;
 
 function showCow(){
     image(cow, xCow, yCow, heightCow, widthCow);
@@ -32,25 +33,53 @@ function showCow(){
   function moveCars(){
     for(let i = 0; i < cars.length ; i++){  //movement of cars
       xCar[i] -= speedCar[i];
+    } 
+    if(level3 == true){
+      for(let i = -1; i < cars.length; i = i + 2){
+        xCar[i] += (speedCar[i]*2)// if it was *1 the movement would be canceled
+      }
     }
+  }
 
-    for(let i = 0; i < cars.length ; i++){
+  function repositionCars(){
+    for(let i = 0; i < cars.length ; i++){//movement of cars in loop
       if(xCar[i] < -lengthCars){
           xCar[i] = width;
       }
-    }  
+    }
+    if(level3 == true){
+      for(let i = -1; i < cars.length; i = i + 2){
+        if(xCar[i] > width + lengthCars){ // the contrary repositioning of the cars
+          xCar[i] = -lengthCars;//so the car doesn't come out of nowhere
+        }
+      }
+    }    
   }
   
   function moveCow(){
     if (keyIsDown(UP_ARROW)){
-      yCow -= 3;
+      yCow -= speedCow;
     }
     if (keyIsDown(DOWN_ARROW)){
       if(yCow > 360){
-        cowOnScreen = false;
-        keepsCowOnTheScreen()
+        yCow = 368//The use this function is only for down because if the cow will go for up, the player win one point
       }
-      yCow += 3;
+      yCow += speedCow;
+    }
+
+    if(level3 == true){
+      if (keyIsDown(RIGHT_ARROW)){
+        xCow += speedCow;
+        if(xCow + widthCow > 600){
+          xCow = 570
+        }
+      }
+      if (keyIsDown(LEFT_ARROW)){
+        xCow -= speedCow;
+        if(xCow < 0){
+          xCow = 0;
+        }
+      }
     }
   }
 
@@ -83,8 +112,24 @@ function showCow(){
     }
   }
 
-  function keepsCowOnTheScreen(){
-    if(cowOnScreen == false){
-      yCow = 368;
-    }
+  function nivel1(){
+    speedCar = [3,5,2,5,4,3];
+    score = 0;
+    level3 = false;
+    xCow = 100;
+  }
+
+  function nivel2(){
+    speedCar = [7,5,6,7,8,5];
+    score = 0;
+    level3 = false;
+    xCow = 100;
+  }
+
+  function nivel3(){
+    speedCar = [7,5,6,7,8,5];
+    speedCow = 2;
+    score = 0;
+    level3 = true;
+    xCow = 280;
   }
